@@ -1,70 +1,70 @@
 # Geschäftsplan zur Gründung als selbstständiger IT-Dienstleister
 
-Презентационный одностраничный сайт бизнес‑плана с навигацией по слайдам, визуализацией графика через Chart.js и удобной загрузкой PDF. Проект рассчитан на локальный запуск и публикацию статического контента.
+Eine präsentationsartige Einzelseite des Geschäftsplans mit Foliendurchlauf, Umsatzdiagramm (Chart.js) und komfortablem PDF-Download. Das Projekt ist für lokalen Betrieb und die Veröffentlichung als statische Seite ausgelegt.
 
-## Описание проекта
-- Веб‑страница с 12 слайдами, оформленная как презентация.
-- Навигация по кнопкам («← Zurück», «Weiter →») и клавишам стрелок.
-- График роста выручки на 9‑м слайде (Chart.js 3.9.1, CDN).
-- Кнопка «📥 PDF herunterladen»: сначала скачивает готовый PDF из папки `assets`, при недоступности — предлагает фолбек на генерацию PDF из страницы через `html2pdf` (CDN).
-- Чистая модульная логика в `script.js` без inline‑обработчиков в HTML.
+## Beschreibung des Projekts
+- Präsentationsseite mit 12 Folien (Slides) im klaren Layout.
+- Navigation über Buttons („← Zurück“, „Weiter →“) und über die Pfeiltasten der Tastatur.
+- Umsatzwachstumsdiagramm auf der 9. Folie (Chart.js 3.9.1, via CDN).
+- Button „📥 PDF herunterladen“: lädt zunächst die vorbereitete PDF aus `assets`, fällt bei Nichtverfügbarkeit auf die Generierung per `html2pdf` (CDN) zurück.
+- Modulare Logik in `script.js` ohne Inline-Event-Handler im HTML.
 
-## Цели проекта
-- Предоставить наглядную, удобную для чтения и печати презентацию бизнес‑плана.
-- Обеспечить стабильную загрузку PDF (готовый файл из `assets`), а также резервный вариант формирования PDF на лету.
-- Сохранить простоту развёртывания: достаточно любого статического сервера.
-- Поддержать базовую доступность и корректную навигацию по клавиатуре.
+## Ziele des Projekts
+- Eine leicht lesbare, druckfreundliche Präsentation des Geschäftsplans bereitstellen.
+- Zuverlässigen PDF-Download sicherstellen (fertige Datei aus `assets`) sowie einen robusten Fallback über `html2pdf` anbieten.
+- Einfaches Deployment ermöglichen: jeder statische Server genügt.
+- Grundlegende Zugänglichkeit und korrekte Tastaturnavigation unterstützen.
 
-## Инструкция по запуску
+## Anleitung zum Starten
 
-### Требования к системе
-- ОС: Windows 10/11, macOS или Linux.
-- Браузер: современный (Chrome, Edge, Firefox, Safari).
-- Для локального сервера: Node.js 18+ (или любой статический сервер/расширение VS Code «Live Server»).
-- Интернет‑доступ (нужен для загрузки библиотек с CDN: Chart.js и html2pdf). Если интернет недоступен, готовый PDF из `assets` всё равно можно скачать.
+### Systemanforderungen
+- Betriebssystem: Windows 10/11, macOS oder Linux.
+- Browser: aktueller Chrome, Edge, Firefox oder Safari.
+- Für den lokalen Server: Node.js 18+ (oder ein beliebiger statischer Server/VS Code „Live Server“).
+- Internetzugang (für die Bibliotheken über CDN: Chart.js und html2pdf). Ist das Internet nicht verfügbar, kann die vorbereitete PDF aus `assets` trotzdem heruntergeladen werden.
 
-### Шаги установки и настройки
-1. Клонируйте репозиторий:
+### Installation und Einrichtung
+1. Repository klonen:
    ```bash
    git clone https://github.com/Melik1986/Gesch-ftsplan-zur-Gr-ndung-als-selbstst-ndiger-IT-Dienstleister.git
    cd Gesch-ftsplan-zur-Gr-ndung-als-selbstst-ndiger-IT-Dienstleister
    ```
-2. (Опционально) Установите простой статический сервер:
-   - Глобально:
+2. (Optional) Einfachen statischen Server installieren oder per `npx` verwenden:
+   - Global:
      ```bash
      npm i -g http-server
      ```
-   - Или без установки:
+   - Ohne Installation:
      ```bash
      npx --yes http-server -p 5500
      ```
-3. Запустите сервер из корня проекта:
+3. Server im Projektstamm starten:
    ```bash
    http-server -p 5500
    ```
-   Альтернатива: используйте VS Code «Live Server» и запустите `index.html`.
+   Alternative: VS Code „Live Server“ nutzen und `index.html` starten.
 
-### Команды для запуска
-- Запуск сервера через `npx`:
+### Startbefehle
+- Serverstart über `npx`:
   ```bash
   npx --yes http-server -p 5500
   ```
-- Откройте страницу в браузере:
+- Seite im Browser öffnen:
   ```
   http://127.0.0.1:5500/index.html
   ```
 
-## Использование
-- Переключение слайдов: кнопки «← Zurück» и «Weiter →» или клавиши стрелок.
-- Кнопка «📥 PDF herunterladen»:
-  - Скачивает готовый PDF из `assets/Gesch_ftsplan_zur_Gr_ndung_als_selbstst_ndiger_IT-Dienstleister.pdf`.
-  - Если файл недоступен, будет предложена генерация PDF из текущей страницы (требуется онлайн‑доступ к CDN `html2pdf`).
+## Nutzung
+- Folienwechsel: Buttons „← Zurück“ und „Weiter →“ oder die Pfeiltasten.
+- Button „📥 PDF herunterladen“:
+  - Lädt die vorbereitete PDF aus `assets/Gesch_ftsplan_zur_Gr_ndung_als_selbstst_ndiger_IT-Dienstleister.pdf`.
+  - Ist die Datei nicht erreichbar, wird die PDF aus der aktuellen Seite generiert (Internetverbindung zum CDN `html2pdf` erforderlich).
 
-## Структура проекта
+## Projektstruktur
 ```
 .
 ├── assets/
-│   └── Gesch_ftsplan_zur_Gr_ndung_als_selbstst_ndiger-IT-Dienstleister.pdf
+│   └── Gesch_ftsplan_zur_Gr_ndung_als_selbstst_ndiger_IT-Dienstleister.pdf
 ├── index.html
 ├── script.js
 ├── styles.css
@@ -72,15 +72,15 @@
     └── settings.json
 ```
 
-## Технические детали
-- `index.html`: подключает стили, CDN Chart.js и html2pdf, а также модульный скрипт `script.js` (`<script type="module" src="script.js"></script>`).
+## Technische Details
+- `index.html`: bindet Styles, die CDNs für Chart.js und html2pdf sowie das modulare Skript `script.js` ein (`<script type="module" src="script.js"></script>`).
 - `script.js`:
-  - Навешивает обработчики кликов и клавиатуры, управляет слайдами и состоянием кнопок.
-  - Инициализирует график только при переходе на нужный слайд (производительность).
-  - Реализует скачивание PDF через `fetch` + Blob; при ошибке — фолбек на `html2pdf`.
-- `styles.css`: оформление разделов, кнопок, адаптивные стили.
+  - Hängt Klick- und Tastatur-Handler an, steuert die Folien und den Zustand der Buttons.
+  - Initialisiert das Diagramm nur beim Wechsel auf die entsprechende Folie (Leistungsoptimierung).
+  - Implementiert den PDF-Download via `fetch` + Blob; bei Fehlern Fallback auf `html2pdf`.
+- `styles.css`: Gestaltung der Abschnitte, Buttons und responsive Styles.
 
-## Примечания
-- При открытии файла напрямую (`file://`) модульные скрипты и ресурсы с CDN могут работать нестабильно в некоторых браузерах. Рекомендуется запуск через локальный сервер.
-- Для генерации PDF из страницы требуется интернет‑доступ к CDN `html2pdf`; готовый PDF в `assets` доступен офлайн.
-- Если видите сообщение о том, что функция `downloadPresentation` не определена, убедитесь, что в HTML нет inline‑обработчиков `onclick` и страница загружена с актуальными правками (жёсткая перезагрузка: `Ctrl+F5`).
+## Hinweise
+- Beim direkten Öffnen per `file://` können modulare Skripte und CDN-Ressourcen in manchen Browsern eingeschränkt funktionieren. Der Start über einen lokalen Server wird empfohlen.
+- Für die PDF-Erzeugung aus der Seite ist Internetzugang zum CDN `html2pdf` erforderlich; die vorbereitete PDF in `assets` ist offline verfügbar.
+- Falls die Meldung „downloadPresentation ist nicht definiert“ erscheint, stellen Sie sicher, dass im HTML keine Inline-Handler `onclick` vorhanden sind und die Seite mit den aktuellen Änderungen geladen wurde (harte Aktualisierung: `Strg+F5`).
